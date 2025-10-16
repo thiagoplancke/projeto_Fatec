@@ -5,7 +5,9 @@ import os
 # Configure the Gemini API key
 # Make sure to set the GOOGLE_API_KEY environment variable in your system.
 # genai.configure(api_key=os.environ["GOOGLE_API_KEY"]) You can use this line if you have the key in your environment.
-genai.configure(api_key="YOUR_API_KEY") # Replace with your key if you don't have it in your environment.
+GOOGLE_API_KEY=os.environ["GOOGLE_API_KEY"] or "GOOGLE_API_KEY"
+
+genai.configure(api_key=GOOGLE_API_KEY)
 
 
 # The extracted and formatted FAQ data
@@ -102,8 +104,10 @@ def main():
     The main function of the chatbot.
     """
     print("Olá! Eu sou o chatbot de FAQ da Whirlpool. Como posso ajudar?")
-    
-    while True:
+
+    user_question = ""
+
+    while user_question not in ["sair", "exit"]:
         user_question = input("> ")
         if user_question.lower() in ["sair", "exit"]:
             break
