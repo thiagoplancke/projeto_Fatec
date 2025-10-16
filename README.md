@@ -33,3 +33,17 @@ Matheus Armelindo
 ## ⭐Designer:
 
 - Emannuel Paulo
+
+# Requisitos
+
+- Chave de API do Google Gemini (AI Studio)
+
+- Docker
+
+- PowerShell/Bash
+
+# Configuração
+
+- Adicionar a `Chave de API do Google Gemini` no `chatbot.py`
+
+- Rodar os containers Docker com a instrução `docker compose run chatbot` no PowerShell/Bash
