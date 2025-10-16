@@ -6,17 +6,11 @@ Este projeto tem como objetivo desenvolver um chatbot inteligente capaz de auxil
 
 ## TECHS
 
-<img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
-  
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css logo"  />
-  
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
-  
-<img src="https://skillicons.dev/icons?i=flask" height="40" alt="flask logo"  />
+<img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css logo"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  /> <img src="https://skillicons.dev/icons?i=flask" height="40" alt="flask logo"  />
 
-# Equipe
+# Scrum Team
 
-## PO
+## Product Owner
 
 Luiz Henrique Crepaldi
 
@@ -36,6 +30,6 @@ Matheus Armelindo
 
 - Kevin Walker
 
-## ⭐Dseigner:
+## ⭐Designer:
 
 - Emannuel Paulo
