@@ -1,0 +1,5 @@
+services:
+  chatbot:
+    build: ./src/chatbot
+    env_file:
+      - ./src/chatbot/.env
