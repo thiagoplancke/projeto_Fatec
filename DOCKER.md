@@ -15,17 +15,17 @@ You must have an API key for the Google Gemini API.
 
 1.  **Pull the image from Docker Hub:**
 
-    ```bash
-    docker pull tarsislimafatec/chatbot_fatec_whirlpool:latest
-    ```
+```bash
+docker pull tarsislimafatec/chatbot_fatec_whirlpool:latest
+```
 
 2.  **Run the container with your API key:**
 
-    Replace `"YOUR_API_KEY"` with your actual Google Gemini API key.
+Replace `"YOUR_API_KEY"` with your actual Google Gemini API key.
 
-    ```bash
-    docker run -it -e GOOGLE_API_KEY="YOUR_API_KEY" tarsislimafatec/chatbot_fatec_whirlpool:latest
-    ```
+```bash
+docker run -it -e GOOGLE_API_KEY="YOUR_API_KEY" tarsislimafatec/chatbot_fatec_whirlpool:latest
+```
 
 The chatbot will start in an interactive command-line interface.
 
