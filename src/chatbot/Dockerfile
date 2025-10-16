@@ -2,10 +2,10 @@ FROM python:alpine
 
 WORKDIR /app
 
-COPY src/chatbot/requirements.txt .
+COPY ./requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY src/chatbot/ .
+COPY . .
 
 CMD ["python", "chatbot.py"]
