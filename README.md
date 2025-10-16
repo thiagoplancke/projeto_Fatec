@@ -24,12 +24,28 @@
   <img src="https://skillicons.dev/icons?i=flask" height="40" alt="flask logo"  />
 </div>
 
-###
+# Equipe
 
-<h2 align="left">Equipe</h2>
+## PO
 
-###
+Luiz Henrique Crepaldi
 
-<p align="left">PO: <br>*Luiz Henrique Crepaldi<br>Scrum Master: <br>*Matheus Armelindo<br>☀️​Developers: <br>​⭐​Backend: <br>*Tarsis Lima <br>*Thiago Plancke <br>*Mateus Linardi<br>⭐Frontend:<br>*Kevin Walker<br>⭐Dseigner: <br>*Emannuel Paulo</p>
+## Scrum Master:
 
-###
+Matheus Armelindo
+
+## ☀️​Developers:
+
+## ​⭐​Backend:
+
+- Tarsis Lima
+- Thiago Plancke
+- Mateus Linardi
+
+## ⭐Frontend:
+
+- Kevin Walker
+
+## ⭐Dseigner:
+
+- Emannuel Paulo
