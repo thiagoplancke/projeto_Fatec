@@ -1,7 +1,13 @@
 services:
 
   chatbot:
-    image: tarsislimafatec/chatbot_fatec_whirlpool
-    build: ./src/chatbot
+    image: 'tarsislimafatec/chatbot_fatec_whirlpool'
+    build: './src/chatbot'
     environment:
-      - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+      - 'GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY'
+
+  server:
+    image: 'tarsislimafatec/server_fatec_whirlpool'
+    build: './src/server'
+    ports:
+      - '5000:5000'
