@@ -21,3 +21,11 @@ docker compose build server
 ```bash
 docker run --network host tarsislimafatec/server_fatec_whirlpool:latest 
 ```
+
+## TODOs
+
+- [ ] Train Gemini with Whirpool questions
+
+- [ ] Fix Gemini answer on browser (HTML instead Markdown)
+
+- [ ] Set Chat ID on Gemii answers
