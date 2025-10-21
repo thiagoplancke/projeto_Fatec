@@ -1,37 +1,43 @@
 console.log('Chatbot Fatec Whirlpool')
 
 export class Chat {
-  constructor() {
-    this.id = null
-    this.messages = []
-    this.messagesDiv = null
-    this.messageInput = null
-    this.sendButton = null
-  }
+  socket = null
 
-  setId(id) {
+  constructor(id) {
     this.id = id
-    console.log('Chat ID:', this.id)
-  }
 
-  start() {
+    this.messages = []
     this.messagesDiv = document.getElementById('messages')
     this.messageInput = document.getElementById('message')
     this.sendButton = document.getElementById('send')
 
-    if (this.sendButton) {
-      this.sendButton.addEventListener('click', () => this.sendMessage())
-    }
+    console.log('Chat ID:', this.id)
+  }
 
-    if (this.messageInput) {
-      this.messageInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          this.sendMessage()
-        }
-      })
-    }
+  start() {
+    this.setEvents()
 
-    console.log('Chat started')
+    this.socket = io();
+
+    this.setSocketEvents()
+  }
+
+  setSocketEvents() {
+    this.socket.on('connect', () => {
+      this.socket.emit('my event', { data: 'I\'m connected!' });
+    });
+
+    this.socket.on('message', (data) => {
+      this.receiveMessage(data.message);
+    });
+  }
+
+  setEvents() {
+    this.sendButton.addEventListener('click', () => this.sendMessage())
+
+    this.messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') this.sendMessage()
+    })
   }
 
   sendMessage() {
@@ -39,11 +45,7 @@ export class Chat {
     if (message) {
       this.addMessage('user', message)
       this.messageInput.value = ''
-      
-      // Emit message via socket.io if available
-      if (typeof io !== 'undefined' && window.socket) {
-        window.socket.emit('message', { chatId: this.id, message: message })
-      }
+      this.socket.emit('message', { chatId: this.id, message: message })
     }
   }
 
@@ -51,12 +53,10 @@ export class Chat {
     const messageDiv = document.createElement('div')
     messageDiv.className = `message ${sender}`
     messageDiv.textContent = `${sender}: ${text}`
-    
-    if (this.messagesDiv) {
-      this.messagesDiv.appendChild(messageDiv)
-      this.messagesDiv.scrollTop = this.messagesDiv.scrollHeight
-    }
-    
+
+    this.messagesDiv.appendChild(messageDiv)
+    this.messagesDiv.scrollTop = this.messagesDiv.scrollHeight
+
     this.messages.push({ sender, text, timestamp: Date.now() })
   }
 
