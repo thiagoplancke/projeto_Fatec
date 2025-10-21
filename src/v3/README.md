@@ -2,6 +2,10 @@
 
 ## Python libraries
 
+[Gemini API](https://ai.google.dev/gemini-api/docs/migrate?hl=pt-br)
+
+[Google AI Studio - API Keys](https://aistudio.google.com/api-keys)
+
 [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/index.html)
 
 [Flask](https://flask.palletsprojects.com/en/stable/quickstart/#)
