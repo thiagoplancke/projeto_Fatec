@@ -1,5 +1,11 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, send, emit
+import json
+import google.generativeai as genai
+
+genai.configure(api_key="<COLOQUE SUA CHAVE AQUI>")
+
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 app = Flask(__name__, static_folder='static', static_url_path='/static') 
 
@@ -17,11 +23,18 @@ socketio.init_app(app)
 
 @socketio.on('message')
 def handle_message(data):
-    print('received message: ' + str(data))
+    question = data['message']
+    chat_id = data['chatId']
+
+    response = model.generate_content(str(question))
+
+    answer = str(response.text)
+
+    emit('message', { 'chatId': str(chat_id), 'message': str(answer)})
 
 @socketio.on('json')
 def handle_json(json):
-    print('received json: ' + str(json))
+    emit('json', json)
 
 if __name__ == '__main__':
     socketio.run(app)
