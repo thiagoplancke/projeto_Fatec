@@ -8,6 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
     integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/chat.css">
 </head>
 
 <body>
@@ -15,21 +16,14 @@
   <div>
     <div id="messages"></div>
     <div class="input">
-      <input type="text" id="message" />
-      <button id="send">send</button>
+      <input type="text" id="message" placeholder="Mensagem..." />
+      <button id="send">Enviar</button>
     </div>
   </div>
   <script type="module">
-    import { Chat } from './chat.js'
-    const chat = new Chat()
-    const id = ''
-    chat.setId(id)
+    import { Chat } from '/static/chat.js'
+    const chat = new Chat('{{ chatid }}')
     chat.start()
-
-    var socket = io();
-    socket.on('connect', function () {
-      socket.emit('my event', { data: 'I\'m connected!' });
-    });
   </script>
 </body>
 
