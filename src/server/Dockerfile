@@ -8,4 +8,4 @@ RUN pip install Flask
 
 RUN pip install flask-socketio
 
-CMD flask --app app run --debug
+CMD python app.py # flask --app app run --debug
