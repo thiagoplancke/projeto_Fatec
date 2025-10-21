@@ -10,7 +10,19 @@
 
 [Flask](https://flask.palletsprojects.com/en/stable/quickstart/#)
 
-## How to run
+## How to run in Python
+
+Install [Python](https://www.python.org/downloads/)
+
+In ./src/v3, run in Python:
+
+```bash
+python app.py 
+```
+
+Open `http://127.0.0.1:5000`
+
+## How to run in Docker
 
 Install [Docker](https://www.docker.com/)
 
