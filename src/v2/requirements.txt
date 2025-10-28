@@ -1,0 +1,5 @@
+google-genai
+spacy
+sentence-transformers
+transformers
+gradio
