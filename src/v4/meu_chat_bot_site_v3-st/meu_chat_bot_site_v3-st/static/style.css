@@ -1,0 +1,401 @@
+/* ======= Estilo geral ======= */
+body {
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  background-color: #343541;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #ececec;
+}
+
+/* ======= Container principal ======= */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Pretendo mudar */
+/* ======= Título ======= */
+h1 {
+  text-align: left;
+  color: #ececec;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ======= Caixa do chat ======= */
+.chat-box {
+  flex-grow: 1;
+  background-color: #444654;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+}
+
+/* ======= Mensagens ======= */
+.message {
+  display: flex;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.message.user {
+  justify-content: flex-end; /* direita */
+}
+
+.message.bot {
+  justify-content: flex-start; /* esquerda */
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 15px;
+  background-color: #565869;
+  color: #ececec;
+  border: 2px solid transparent;
+}
+
+/* ======= Usuário ======= */
+.message.user .message-content {
+  background-color: #343541;
+  border-color: #19c37d; /* verde */
+  color: #ffffff;
+  border-bottom-right-radius: 0;
+}
+
+/* ======= Bot ======= */
+.message.bot .message-content {
+  background-color: #565869;
+  border-color: #8e8e8e; /* cinza */
+  color: #ececec;
+  border-bottom-left-radius: 0;
+}
+
+.message.bot {
+  flex-direction: column; /* empilha conteúdo e botões verticalmente */
+  align-items: flex-start; /* alinha à esquerda */
+}
+
+/* botão de feedback */
+.feedback-buttons {
+  display: flex;           /* botões em linha */
+  gap: 10px;               /* espaço entre os botão */
+  margin-top: 5px;         /* distância da mensagem */
+  justify-content: flex-start; /* alinha à esquerda da mensagem */
+  flex-wrap: nowrap;       /* impede que quebrem para a próxima linha */
+}
+
+.feedback-buttons button.tooltip {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;      /* necessário para a tooltip */
+}
+
+/* tooltip escondido por padrão */
+.feedback-buttons button.tooltip::after {
+  content: attr(data-tooltip);   /* pega o texto do data-tooltip */
+  position: absolute;
+  bottom: 125%;                  /* acima do botão */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;        /* fundo do tooltip */
+  color: #fff;                   /* texto do tooltip */
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;                    /* invisível por padrão */
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+/* setinha do tooltip */
+.feedback-buttons button.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 115%;                  /* ligeiramente acima do botão */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+/* tooltip ao passar o mouse */
+.feedback-buttons button.tooltip:hover::after,
+.feedback-buttons button.tooltip:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px); /* efeito suave */
+}
+
+.feedback-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #888; /* cor inicial */
+  transition: color 0.2s ease;
+}
+
+.feedback-buttons button:hover {
+  color: #bbb;
+}
+
+.feedback-buttons button.active {
+  color: #fff; /* quando clicado fica branco */
+}
+
+/* adaptação para modo claro */
+body.light-mode .feedback-buttons button {
+  color: #555;
+}
+
+body.light-mode .feedback-buttons button:hover {
+  color: #333;
+}
+
+body.light-mode .feedback-buttons button.active {
+  color: #000;
+}
+
+/* ======= Área de input (msg) ======= */
+.input-area {
+  display: flex;
+  gap: 10px;
+  background-color: #40414f;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+#input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #343541;
+  color: #ececec;
+}
+
+#input::placeholder {
+  color: #aaa;
+}
+
+/* pretendo mudar tb */
+/* ======= Botão de enviar ======= */
+button {
+  padding: 12px 18px;
+  background-color: #19c37d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #15a76c;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+/* ===== CONFIG ===== */
+#settings-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #19c37d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.2s;
+}
+#settings-btn:hover {
+  background-color: #15a76c;
+  transform: scale(1.05);
+}
+
+/* ===== aba da config ===== */
+#settings-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100vh;
+  background-color: #2b2b33;
+  color: #fff;
+  padding: 20px;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+/* quando estiver aberta */
+#settings-panel.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* topo do painel */
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings-header h2 {
+  margin: 0;
+}
+.settings-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* controles gerais */
+label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+select, input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* botão modo claro/escuro */
+.mode-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+.mode-group button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #666;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.mode-group button:hover {
+  background-color: #555;
+}
+.mode-group button.active {
+  background-color: #19c37d;
+  border-color: #19c37d;
+}
+
+/* ======= modo claro ======= */
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+body.light-mode h1 {
+  text-align: center;
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+body.light-mode .chat-box {
+  background-color: #e3e3e3;
+  color: #222;
+}
+
+body.light-mode .input-area {
+  background-color: #ddd;
+}
+
+body.light-mode #input {
+  background-color: #fff;
+  color: #222;
+}
+
+body.light-mode .message.bot .message-content {
+  background-color: #dcdcdc;
+  color: #111;
+  border-color: #999;
+}
+
+body.light-mode .message.user .message-content {
+  background-color: #f7f7f7;
+  color: #000;
+  border-color: #19c37d;
+}
+
+body.light-mode #settings-panel {
+  background-color: #fff;
+  color: #000;
+}
+body.light-mode .mode-group button {
+  background-color: #ddd;
+  color: #000;
+  border-color: #aaa;
+}
+body.light-mode .mode-group button.active {
+  background-color: #19c37d;
+  color: #fff;
+}

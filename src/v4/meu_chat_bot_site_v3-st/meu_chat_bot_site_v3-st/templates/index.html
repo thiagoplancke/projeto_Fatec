@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Chatbot sem IA ainda</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <div class="container">
+    <h1>Whiribot</h1>
+
+    <div id="chat" class="chat-box"></div>
+
+    <div class="input-area">
+      <input id="input" placeholder="Digite sua mensagem..." />
+      <button onclick="enviar()">Enviar</button>
+    </div>
+  </div>
+<!-- Botão de abrir configurações -->
+<button id="settings-btn" title="Configurações">
+  <svg viewBox="0 0 24 24" fill="none">
+    <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="white" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="3" fill="white"/>
+  </svg>
+</button>
+
+<!-- Painel lateral de configurações -->
+<div id="settings-panel">
+  <div class="settings-header">
+    <h3>Configurações</h3>
+  </div>
+
+  <label for="font-family">Tipo de fonte:</label>
+  <select id="font-family">
+    <option value="'Segoe UI', 'Inter', sans-serif">Padrão</option>
+    <option value="Arial, sans-serif">Arial</option>
+    <option value="'Courier New', monospace">Courier New</option>
+    <option value="'Times New Roman', serif">Times New Roman</option>
+  </select>
+
+  <div class="mode-buttons">
+    <label>Modo:</label>
+    <div class="mode-group">
+      <button id="light-mode-btn">Claro</button>
+      <button id="dark-mode-btn">Escuro</button>
+    </div>
+  </div>
+</div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
