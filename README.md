@@ -46,7 +46,7 @@ Matheus Armelindo
 
 - Adicionar a `Chave de API do Google Gemini` no `chatbot.py`
 
-- Rodar os containers Docker com a instrução `docker compose run chatbot` no PowerShell/Bash
+- Rodar os containers Docker com a instrução `docker compose up --remove-orphans --build v4` no PowerShell/Bash
 
 # Próximos passos
 
