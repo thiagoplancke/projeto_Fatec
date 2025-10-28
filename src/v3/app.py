@@ -2,7 +2,13 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
 import google.generativeai as genai
 
-genai.configure(api_key="<COLOQUE SUA CHAVE AQUI>")
+import os
+
+GEMINI_API_KEY=os.getenv("GEMINI_API_KEY", "none")
+
+print(f"GEMINI_API_KEY: {GEMINI_API_KEY}")
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel('gemini-2.5-flash')
 
