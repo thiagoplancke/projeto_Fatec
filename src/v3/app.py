@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
-import json
 import google.generativeai as genai
 
 genai.configure(api_key="<COLOQUE SUA CHAVE AQUI>")
@@ -37,4 +36,4 @@ def handle_json(json):
     emit('json', json)
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, allow_unsafe_werkzeug=True)
