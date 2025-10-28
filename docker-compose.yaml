@@ -3,8 +3,6 @@ services:
   v1:
     image: 'tarsislimafatec/chatbot_fatec_whirlpool'
     build: './src/v1'
-    environment:
-      - 'GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY'
 
   v2:
     build: './src/v2'
@@ -14,10 +12,10 @@ services:
   v3:
     image: 'tarsislimafatec/server_fatec_whirlpool'
     build: './src/v3'
-    environment:
-      - GEMINI_API_KEY=
 
   v4:
     build: './src/v4'
+    environment:
+      - GEMINI_API_KEY=
     ports:
       - '5000:5000'
