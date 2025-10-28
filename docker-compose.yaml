@@ -1,10 +1,14 @@
 services:
-
   v1:
     image: 'tarsislimafatec/chatbot_fatec_whirlpool'
     build: './src/v1'
     environment:
       - 'GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY'
+
+  v2:
+    build: './src/v2'
+    ports:
+      - '7860:7860'
 
   v3:
     image: 'tarsislimafatec/server_fatec_whirlpool'

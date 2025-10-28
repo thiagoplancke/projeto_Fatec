@@ -10,4 +10,4 @@ RUN pip install flask-socketio
 
 RUN pip install google-generativeai
 
-CMD python app.py # flask --app app run --debug
+CMD flask --app app run --debug --host 0.0.0.0
