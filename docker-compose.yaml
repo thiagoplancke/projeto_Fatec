@@ -1,4 +1,5 @@
 services:
+
   v1:
     image: 'tarsislimafatec/chatbot_fatec_whirlpool'
     build: './src/v1'
@@ -13,5 +14,10 @@ services:
   v3:
     image: 'tarsislimafatec/server_fatec_whirlpool'
     build: './src/v3'
+    environment:
+      - GEMINI_API_KEY=
+
+  v4:
+    build: './src/v4'
     ports:
       - '5000:5000'

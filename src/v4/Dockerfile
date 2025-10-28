@@ -14,4 +14,4 @@ RUN pip install flask-socketio
 
 RUN pip install -U google-genai
 
-CMD python3 example.py  # flask --app app run --debug --host 0.0.0.0
+CMD flask --app app run --debug --host 0.0.0.0
