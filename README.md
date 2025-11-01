@@ -14,26 +14,26 @@ Este projeto visa desenvolver um chatbot inteligente para auxiliar os clientes d
 
 ## Contribuidores
 
-### Dono do Produto
+### Product Owner
 
-- Luiz Henrique Crepaldi
+- [Luiz Henrique Crepaldi](#)
 
 ### Scrum Master
 
-- Matheus Armelindo
+- [Matheus Armelindo](#)
 
 ### Desenvolvedores
 
 #### Backend
 
-- Tarsis Lima
-- Thiago Plancke
-- Mateus Linardi
+- [Tarsis Lima](https://github.com/tarsislimadev)
+- [Thiago Plancke](https://github.com/thiagoplancke)
+- [Mateus Linardi](#)
 
 #### Frontend
 
-- Kevin Walker
+- [Kevin Walker](#)
 
 ### Designer
 
-- Emannuel Paulo
+- [Emannuel Paulo](#)
