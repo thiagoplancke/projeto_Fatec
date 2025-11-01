@@ -8,7 +8,7 @@ COPY . .
 
 RUN pip install Flask
 
-RUN pip install flask-socketio
+# RUN pip install flask-socketio
 
 # RUN pip install google-generativeai
 
