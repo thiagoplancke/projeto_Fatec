@@ -8,10 +8,6 @@ COPY . .
 
 RUN pip install Flask
 
-# RUN pip install flask-socketio
-
-# RUN pip install google-generativeai
-
 RUN pip install -U google-genai
 
 RUN pip install python-dotenv
