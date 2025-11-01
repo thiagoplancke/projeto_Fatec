@@ -1,53 +1,39 @@
-# [Chatbot Whirlpool - Assistente Virtual Inteligente](https://hub.docker.com/r/tarsislimafatec/chatbot_fatec_whirlpool)
+# Chatbot Whirlpool - Assistente Virtual Inteligente
 
-## 📋Descrição
+## Visão Geral do Projeto
 
-Este projeto tem como objetivo desenvolver um chatbot inteligente capaz de auxiliar clientes da Whirlpool com dúvidas sobre produtos (máquinas de lavar, fogões etc.).<br>O chatbot utiliza Processamento de Linguagem Natural (NLP) com SpaCy para interpretar perguntas e encontrar respostas relevantes, simulando um atendimento humano.<br>A longo prazo, o projeto poderá integrar modelos avançados de IA (Gemini) para uma melhor comunicação com o usuario.
+Este projeto visa desenvolver um chatbot inteligente para auxiliar os clientes da Whirlpool com dúvidas sobre produtos (por exemplo, máquinas de lavar, fogões). O chatbot utiliza Processamento de Linguagem Natural (PLN) para interpretar perguntas e fornecer respostas relevantes, simulando a interação humana. O projeto integra modelos avançados de IA (Gemini) para uma comunicação aprimorada com o usuário.
 
-## TECHS
+## Tecnologias Utilizadas
 
-<img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css logo"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  /> <img src="https://skillicons.dev/icons?i=flask" height="40" alt="flask logo"  />
+- Python
+- Flask
+- HTML
+- CSS
+- API do Google Gemini (para integração avançada de IA)
 
-# Scrum Team
+## Contribuidores
 
-## Product Owner
+### Dono do Produto
 
-Luiz Henrique Crepaldi
+- Luiz Henrique Crepaldi
 
-## Scrum Master:
+### Scrum Master
 
-Matheus Armelindo
+- Matheus Armelindo
 
-## ☀️​Developers:
+### Desenvolvedores
 
-## ​⭐​Backend:
+#### Backend
 
 - Tarsis Lima
 - Thiago Plancke
 - Mateus Linardi
 
-## ⭐Frontend:
+#### Frontend
 
 - Kevin Walker
 
-## ⭐Designer:
+### Designer
 
 - Emannuel Paulo
-
-# Requisitos
-
-- Chave de API do Google Gemini (AI Studio)
-
-- Docker
-
-- PowerShell/Bash
-
-# Configuração
-
-- Adicionar a `Chave de API do Google Gemini` no `chatbot.py`
-
-- Rodar os containers Docker com a instrução `docker compose up --remove-orphans --build v4` no PowerShell/Bash
-
-# Próximos passos
-
-- [ ] Vincular o chatbot como servidor para página web.
