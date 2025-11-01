@@ -1,45 +1,19 @@
+# [Chatbot Whirlpool - Assistente Virtual Inteligente](https://hub.docker.com/r/tarsislimafatec/chatbot_fatec_whirlpool)
 
-# Whirlpool Customer Support Chatbot
+## Puxar a Imagem Docker
 
-This is a Python-based chatbot for Whirlpool customer support. It is designed to answer frequently asked questions about Whirlpool products.
-
-The chatbot is built with Python and utilizes the Google Generative AI (Gemini) API for Natural Language Processing.
-
-## How to Use This Image
-
-### Prerequisites
-
-You must have an API key for the Google Gemini API.
-
-### Running the Chatbot
-
-1.  **Pull the image from Docker Hub:**
+Para puxar a imagem Docker mais recente do Docker Hub, use o seguinte comando:
 
 ```bash
-docker pull tarsislimafatec/chatbot_fatec_whirlpool:latest
+docker pull tarsislimafatec/chatbot_fatec_whirlpool
 ```
 
-2.  **Run the container with your API key:**
+## Executar a Imagem Docker
 
-Replace `"YOUR_API_KEY"` with your actual Google Gemini API key.
+Depois de puxar a imagem, você pode executar o chatbot usando [Docker](). Certifique-se de ter sua chave de [API do Google Gemini](https://aistudio.google.com/api-keys) pronta.
 
 ```bash
-docker run -it -e GOOGLE_API_KEY="YOUR_API_KEY" tarsislimafatec/chatbot_fatec_whirlpool:latest
+docker run -p 5000:5000 -e GOOGLE_API_KEY="SUA_CHAVE_API_GEMINI" tarsislimafatec/chatbot_fatec_whirlpool
 ```
 
-The chatbot will start in an interactive command-line interface.
-
-## Configuration
-
-### Environment Variables
-
--   `GOOGLE_API_KEY`: **(Required)** Your API key for the Google Gemini API.
-
-## Example Interaction
-
-```
-Welcome to the Whirlpool Chatbot!
-Ask a question or type "quit" to exit.
-You: What is the warranty on my refrigerator?
-Chatbot: The standard warranty for Whirlpool refrigerators is one year for parts and labor.
-```
+Substitua `"SUA_CHAVE_API_GEMINI"` pela sua chave de API real do Google Gemini. O chatbot estará acessível em `http://localhost:5000`.
