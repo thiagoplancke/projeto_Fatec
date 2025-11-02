@@ -21,7 +21,7 @@ Este projeto visa desenvolver um chatbot inteligente para auxiliar os clientes d
 - [Tarsis Lima](https://github.com/tarsislimadev) (Back-end)
 - [Thiago Plancke](https://github.com/thiagoplancke) (Back-end)
 - [Mateus Linardi](https://github.com/mateozin) (Back-end)
-- [Kevin Walker](#) (Front-end)
+- [Kevin Walker](https://github.com/kevin64dsu-zx) (Front-end)
 - [Emannuel Paulo](https://github.com/emannuelp-boldrin) (Designer)
 
 ## Como rodar o projeto
