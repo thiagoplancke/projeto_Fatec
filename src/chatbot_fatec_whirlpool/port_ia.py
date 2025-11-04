@@ -1,19 +1,13 @@
-from google import genai
-from google.genai import types
-import os
+# aqui eu só usei para testar mesmo.
+# port_ia.py
+def responder_ia(texto):
+    texto = texto.lower()
 
-model="gemini-2.5-flash"
-api_key = os.getenv("GEMINI_API_KEY")
-
-client = genai.Client(api_key=api_key)
-
-system_instruction = """
-Você é o Assistente Virtual da Whirlpool. 
-Você pode responder, em texto curtos, sobre produtos Whirlpool.
-"""
-
-config = types.GenerateContentConfig(system_instruction=system_instruction)
-
-def responder_ia(contents):
-    response = client.models.generate_content(model=model,contents=contents,config=config)
-    return response.text
+    if "oi" in texto or "olá" in texto:
+        return "Olá! Sou Whiribot :D"
+    elif "ajuda" in texto:
+        return "Claro! Me diga com o que você precisa."
+    elif "tchau" in texto:
+        return "Até mais! 👋"
+    else:
+        return "Interessante... me conte mais sobre isso!"
